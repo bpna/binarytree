@@ -27,7 +27,7 @@ Tree_T Tree_new(int elem)
 
 void Tree_add(Node n, int elem)
 {
-        if (n->elem < elem){
+        if (n->elem > elem){
                 if (n->left == NULL){
                         Node child = malloc(sizeof(child));
                         child->elem = elem;
@@ -42,7 +42,7 @@ void Tree_add(Node n, int elem)
                 }
         }
 
-        if (n->elem > elem){
+        if (n->elem < elem){
                 if (n->right == NULL){
                         Node child = malloc(sizeof(*child));
                         child->elem = elem;
