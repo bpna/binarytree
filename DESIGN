@@ -1,0 +1,39 @@
+1. What is the abstract thing you are trying to represent?
+
+A binary search tree. When the tree is instantiated, the first element
+provided becomes root. After root, all new elements are placed on a branch
+left or right of the root, depending on whether they are minimal or maximal
+with respect to their immediate parent.
+
+2. What functions will you offer, and what are their contracts?
+
+/*
+ * Instantiates a tree with a single root element
+ */
+Tree_T  Tree_new(int elem);
+
+/*
+ * Adds an element to the Tree. It is a checked runtime error to pass a NULL
+ * Tree_T to Tree_add and an unchecked runtime error to pass a pointer to 
+ * something that is not a Tree_T.
+ */
+extern bool     Tree_add(Tree_T t, int elem);
+
+/*
+ * Traverses Tree_T t in order, printing elements from the leftmost element
+ * (the bottom of the furthest left branch) to the rightmost element
+ * (the bottom of the furthest right branch). It is a checked runtime error to
+ * pass a NULL Tree_T to Tree_inorder and an unchecked runtime error to pass 
+ * something that is not a Tree_T.
+ */
+extern void     Tree_inorder(Tree_T t);
+
+/*
+ * Traverses Tree_T t in depth first order, where each branch is printed from
+ * the bottom before evaluating the next branch.
+ *
+ * TODO: Determine how this is different (if at all) from an in-order
+ * traversal
+ */
+extern void     Tree_depthfirst(Tree_T t);
+
